@@ -18,25 +18,34 @@
 	csökkenteni, ami a korábban ismertetett memória szervezési gondolatok
 	helyességét igazolja.
 	 
-	\begin{table}[!t]
-		\renewcommand{\arraystretch}{1.5}
-		% if using array.sty, it might be a good idea to tweak the value of
-		% \extrarowheight as needed to properly center the text within the cells
-		\caption{OpenCL futási idő eredmények $12\times12$ mérési pontra}
-		\label{table:openresult}
+	\begin{table*}[!b]
+	\renewcommand{\arraystretch}{1.2}
+	% if using array.sty, it might be a good idea to tweak the value of
+	% \extrarowheight as needed to properly center the text within the cells
+	\caption{OpenCL futási idő eredmények $12\times12$ mérési pontra}
+	\label{table:openresult}
+	% Some packages, such as MDW tools, offer better commands for making tables
+	% than the plain LaTeX2e tabular which is used here.
+	\centering
+	\begin{tabular}{l|r|r|r}
+	 & Globális memória & Lokális memória, ha befér & Lokális memória bufferelés\\ \hline
+	\parbox{2.5cm}{Globális tranzakciók száma átlagosan} & $12 \times 12\times 32.3$
+	& $12 \times 12 \times 32.3$ & $12 \times 12 \times 32.3$\\
+	\parbox{2.5cm}{Lokális tranzakciók száma átlagosan} & 0 &
+	$0.48 \times 12 \times 12 \times 30$ & $2.08 \times 12 \times12 \times 32.3$\\
+	Futási idő & 5990 ms & 2530 ms & 510 ms\\
+	Fajlagos futási idő & 410 ms & 170 ms & 3.5 ms 
+	\end{tabular}
+	\end{table*}
+	
+	\begin{figure*}[!t]
 		\centering
-		% Some packages, such as MDW tools, offer better commands for making tables
-		% than the plain LaTeX2e tabular which is used here.
-		\resizebox{\columnwidth}{!}{
-		\begin{tabular}{l|r|r|r}
-			 & Globális memória & Lokális memória, ha befér & Lokális memória bufferelés\\ \hline
-			\parbox{2.5cm}{Globális tranzakciók száma átlagosan} & 12 \times 12\times
-			32.3 & 12 \times 12 \times 32.3 & 12 \times 12 \times 32.3\\
-			\parbox{2.5cm}{Lokális tranzakciók száma átlagosan} & 0 &
-			0.48 \times 12 \times 12 \times 30 & 2.08 \times 12 \times12 \times 32.3\\
-			Futási idő & 5990 ms & 2530 ms & 510 ms\\
-			Fajlagos futási idő & 410 ms & 170 ms & 3.5 ms 
-		\end{tabular}
-		}
-	\end{table}
+		\subfloat[Mérési eredmény]{\includegraphics[width=0.45\columnwidth]{kepek/afm200.eps}%
+		\label{fig_first_case}}
+		\hfil
+		\subfloat[Szimulációs eredmény]{\includegraphics[width=0.45\columnwidth]{kepek/efm200.eps}%
+		\label{fig_second_case}}
+		\caption{Méréssel kapott felület (balra) és szimulációval kapott töltéstérkép}
+		\label{fig_sim}
+	\end{figure*}
 	

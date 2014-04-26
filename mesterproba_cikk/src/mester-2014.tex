@@ -1,7 +1,8 @@
-\documentclass[10pt,conference]{IEEEtran}
+\documentclass[9pt,conference]{IEEEtran}
 
 
 \usepackage[utf8x]{inputenc}
+\usepackage[magyar]{babel}
  %\usepackage{fontspec}
 \usepackage{ucs}
 \usepackage{amsmath}
@@ -13,7 +14,8 @@
 \usepackage{multirow}
 
  \usepackage{psfrag}
-
+ \usepackage{subfig}
+ 
 \usepackage[T1]{fontenc}
 
 \begin{document}
@@ -39,7 +41,7 @@
 	\end{abstract}
 
 	\begin{IEEEkeywords}
-	 numerikus szimuláció, parallel computing, OpenCL, AFM 
+	 numerikus szimuláció, parallel computing,\\ OpenCL, AFM 
 	\end{IEEEkeywords}
 
 	
@@ -52,16 +54,16 @@
 	\input{aftermatch.tex}
 	
 	
+	\bibliography{mybib.bib}
+%	\addcontentsline{toc}{chapter}{Irodalomjegyzék}
+	\bibliographystyle{IEEEtran}
 	
-	\begin{thebibliography}{1}
+	%\begin{thebibliography}{1}
 	
-	\bibitem{Web:khronos}
-	The Khronos OpenCL Working Group, \emph{“OpenCL - The open stan-
-	dard for parallel programming of heterogeneous systems.”} \\http://www.
-	khronos.org/opencl/, 2014.
-	
-	
-	
-	\end{thebibliography}
+	%\bibitem{Web:khronos}
+	%The Khronos OpenCL Working Group, \emph{“OpenCL - The open stan-
+	%dard for parallel programming of heterogeneous systems.”} \\http://www.
+	%khronos.org/opencl/, 2014.
+	%\end{thebibliography}
 	
 \end{document}
