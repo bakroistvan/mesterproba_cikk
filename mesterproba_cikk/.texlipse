@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Apr 14 18:02:50 CEST 2014
+markTmpDer=true
+builderNum=6
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=mester-2014.tex
+outputFile=bakro-mesterproba-2014.pdf
+langSpell=hu
+markDer=true
+srcDir=src

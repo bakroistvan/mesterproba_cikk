@@ -1,0 +1,67 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+
+\usepackage[utf8x]{inputenc}
+ %\usepackage{fontspec}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+
+\usepackage{multirow}
+
+ \usepackage{psfrag}
+
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+	\title{Elektrosztatikus mérés szimulációja multiprocesszoros környezetben}
+	
+	\author{
+		\IEEEauthorblockN{Bakró-Nagy~István} \IEEEauthorblockA{ Szélessávú
+		Hírközlés és Villamosságtan Tanszék\\ Budapesti Műszaki és Gazdaságtudományi
+		Egyetem \\ Budapest \\ \texttt{bakro.istvan@gmail.com}} 
+		\and
+		\IEEEauthorblockN{Reichardt András} \IEEEauthorblockA{Szélessávú Hírközlés és
+		Villamosságtan Tanszék\\ Budapesti Műszaki és Gazdaságtudományi Egyetem \\
+		Budapest \\ \texttt{reich@evt.bme.hu}}
+	}
+	
+	\maketitle
+
+	\begin{abstract}
+	 Fémezett, töltött felület felett lévő fémtűre ható erő számítását végeztük el.
+	 A szimulációk során a lehetséges párhuzamosításokat felhasználva a számítási időt csökkentettük.
+	 Kidolgoztunk egy egyszerű szimulációs keretrendszert a felületmérés pontatlanságainak kiegyensúlyozására, az elérhető felbontás javítására.
+	\end{abstract}
+
+	\begin{IEEEkeywords}
+	 numerikus szimuláció, parallel computing, OpenCL, AFM 
+	\end{IEEEkeywords}
+
+	
+	\input{bev.tex}
+	
+	\input{targy.tex}
+	
+	\input{eredmeny.tex}
+	
+	\input{aftermatch.tex}
+	
+	
+	
+	\begin{thebibliography}{1}
+	
+	\bibitem{Web:khronos}
+	The Khronos OpenCL Working Group, \emph{“OpenCL - The open stan-
+	dard for parallel programming of heterogeneous systems.”} \\http://www.
+	khronos.org/opencl/, 2014.
+	
+	
+	
+	\end{thebibliography}
+	
+\end{document}
