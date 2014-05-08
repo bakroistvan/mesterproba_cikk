@@ -1,4 +1,4 @@
-\documentclass[9pt,conference]{IEEEtran}
+\documentclass[9pt,conference, a4paper]{IEEEtran}
 
 
 \usepackage[utf8x]{inputenc}
@@ -17,6 +17,7 @@
  \usepackage{psfrag}
  \usepackage{subfig}
  \usepackage{float}
+ \usepackage{stfloats}
  
 \usepackage[T1]{fontenc}
 
@@ -39,13 +40,16 @@
 	\maketitle
 
 	\begin{abstract}
-	 Fémezett, töltött felület felett lévő fémtűre ható erő számítását végeztük el.
-	 A szimulációk során a lehetséges párhuzamosításokat felhasználva a számítási időt csökkentettük.
-	 Kidolgoztunk egy egyszerű szimulációs keretrendszert a felületmérés pontatlanságainak kiegyensúlyozására, az elérhető felbontás javítására.
+	 Atomerő mikroszkóppal való fémezett felületü minta felületi töltéssűrűségének mérése során
+	 kritikus a tű és a minta közötti kapacitás ismerete. A kapacitás közelítéseket használó analtikus
+	 kifejezését numerikus szimulációval kiváltva nagyobb felbontás érhető el.
+	 A szimuláció során a lehetséges párhuzamosításokat felhasználva a számítási időt elfogadhatóra
+	 csökkentettük.
 	\end{abstract}
 
 	\begin{IEEEkeywords}
-	 numerikus szimuláció, parallel computing,\\ OpenCL, AFM 
+	 AFM, felületi töltéssűrűség, numerikus szimuláció, \\ párhuzamos számítás, OpenCL, MATLAB Parallel
+	 Toolbox
 	\end{IEEEkeywords}
 
 	

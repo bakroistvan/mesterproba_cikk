@@ -32,8 +32,8 @@
 		\item a minta felületi töltéssűrűség eloszlása.
 	\end{enumerate}
 	A cikkben a felületi töltéssűrűség mérését tekintjük célnak.
-	A \cite{Butt20051} szerint az erő a) komponensét a minta és a tű közötti kapacitásból a
-	(\ref{eq:cap_force}) szerint származtathatjuk.
+	A \cite{Butt1991Dec, Butt20051} szerint az erő a) komponensét a minta és a tű közötti
+	kapacitásból a (\ref{eq:cap_force}) szerint származtathatjuk.
 	\begin{equation}
 	\label{eq:cap_force}
 	F_{s} = -\frac{\ud E}{\ud D} = -\frac{\ud (CV^2 /2)}{\ud D} = -\frac12 \frac{\ud C}{\ud D} V^2
@@ -51,12 +51,12 @@
 	Persze ezen szimulációt minden egyes mérési pontban el kell végezni, aminek a kivitelezése
 	csak multiprocesszoros környezetben lehetséges elfogadható idő alatt.
 	
-\section{A feladat}
+\section{A feladat} \label{sec:feladat}
 	A minta egy fémezett felület, aminek magasságtérképét mérések eredményeként ismerjük
 	adott pontossággal.
 	A mérések egy négyzetes háló felett történtek, amelynek a háló mindkét irányban
-	$\delta_x = \delta_y = 120 nm$ azonos felbontása, illetve a magasság $\delta_z = 20nm$ felbontása
-	volt.
+	$\delta_x = \delta_y \simeq 180 nm$ azonos felbontása, illetve a magasság $\delta_z \simeq 20nm$
+	felbontása volt.
 	A töltéssűrűség méréséhez szükséges második pásztázás során a tűt felemeljük és a mintához képest
 	$V_{tu}$ potenciálra kapcsoljuk. Ezután a fémezett felülettől mindig azonos távolságra tartjuk és ezen 
 	hosszú hegyes tűre ható erőt mérjük.
@@ -68,19 +68,22 @@
 	\end{center}
 	
 	A cikkben felhasznált mérési eredmény (\ref{fig:felulet}. ábra) egy
-	$512\times512$ méretű szürkeárnyalatos *.tiff állomány, amely értékei $0-255$-ig terjed.
+	$512\times512$ méretű szürkeárnyalatos *.tiff állomány, amely értéke $0-255$-ig terjed.
 	
-	\begin{figure}[!h]
+	\begin{figure}[!t]
 		\centering
-		\includegraphics[width=0.45\columnwidth]{kepek/eps/afm200.eps}
-		\includegraphics[width=0.45\columnwidth]{kepek/eps/efm200.eps}
-		\caption{\scriptsize Méréssel kapott felület (balra) és szimulációval kapott töltéstérkép}
+		\subfloat[Mérési eredmény]{\includegraphics[width=0.5\columnwidth]{kepek/eps/newafm_total.eps}%
+		\label{fig:afm_total}}
+		\hfil
+		\subfloat[Mérés részlete]{\includegraphics[width=0.5\columnwidth]{kepek/eps/newafm200.eps}%
+		\label{fig:afm200}}
+		\caption{\scriptsize Méréssel kapott magasságtérkép. Felbontás $d_x=d_y=120nm \ d_z=18.03nm$}
 		\label{fig:felulet}
 	\end{figure}
 	
 	
 	
-\section{Szimuláció} 
+\section{Szimuláció}
 \subsection{Fizikai probléma matematikai formalizálása}
 	
 	A megoldandó feladat egy elektrosztatikus feladat.
@@ -152,18 +155,18 @@
 
 \subsection{Szimuláció felépítése} \label{sec:felepites}
 	
-	A felületmérés során a vízszintes felbontás joval kissebb, mint a függőleges felbontás
-	$d_x=d_y \gg d_z$. A Coulomb-kölcsönhatás a távolság négyzetével fordítottan arányos,
-	így az előbb említettek értelmében egy mérési pont szomszédjait, pontosabban egy redukált
-	környezetét szükséges csupán szimulálni. (Másképpen megfogalmazva a vízszintes mérési pontok
-	távolsága jóval nagyobb mint a Coulomb-kölcsönhatás effektív távolsága.) Ezzel az elhanyagolással
-	már numerikusan kezelhető bonyulultságú problémára jutunk.
+	A felületmérés során a vízszintes felbontás jóval kissebb, mint a függőleges felbontás, azaz a
+	pontok vízszintes távolsága sokkal nagyobb a függőlegesnél $d_x=d_y \gg d_z$ (lásd \ref{sec:feladat}. rész).
+	A Coulomb-kölcsönhatás a távolság négyzetével fordítottan arányos, így az előbb említettek értelmében egy mérési pont szomszédjait, pontosabban egy redukált
+	környezetét szükséges csupán szimulálni (Másképpen megfogalmazva a vízszintes mérési pontok
+	távolsága jóval nagyobb mint a Coulomb-kölcsönhatás effektív távolsága). Ezzel az elhanyagolással
+	a feladat már numerikusan kezelhető méretűre csökken.
 	
 	Ezen módon egy mért pont $3\times3$-as környezetét vesszük figyelembe,
 	a középső pont felett lévő elektródát (tűt) feltételezve.
 	A szimulációs tér alsó felületét a mért magassági $3\times 3$ mintákból kell meghatároznunk.
 	Mivel ezen pontokra úgy is tekinthetünk, mint a minta magasság-függvényének a mintavételezésével
-	kapott mintáira, így a küzbünső pontokat interpolációval/ideális aluláteresztéssel kaphatjuk meg.
+	kapott mintáira, így a közbülső pontokat interpolációval (mozgó átlagolással) kapjuk meg.
 	Az interpoláció $N_{ip}$ faktorával \footnote{$N_{ip}$-szeresére növeljük a pontok számát.}
 	lehetséges a szimulációs tér vízszintes felbontását $d_x=d_y = \delta_x / N_{ip}$ megkapni.
 
