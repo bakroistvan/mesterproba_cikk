@@ -8,10 +8,10 @@
 	mennyiségét kaphatjuk meg.
 	\begin{figure}[H]
 		\centering
-		\subfloat[Az AFM apparátusa]{\includegraphics[width=0.45\columnwidth]{kepek/eps/AFM.eps}%
+		\subfloat[Az AFM apparátusa]{\includegraphics[width=0.4\columnwidth]{kepek/eps/AFM.eps}%
 		\label{fig:afm}}
 		\hfil
-		\subfloat[A tű és minta modellje]{\includegraphics[width=0.45\columnwidth]{kepek/eps/tip-sample.eps}%
+		\subfloat[A tű és minta modellje]{\includegraphics[width=0.4\columnwidth]{kepek/eps/tip-sample.eps}%
 		\label{fig:tip-sample}}
 		\caption{\scriptsize Az AFM apparátusa látható az (a) ábrán. A lázernyaláb
 		a kantilever felületéről tükröződve egy fotódetektorra irányul. A tű pozícióját ez alapján nagy pontossággal ismerjük. A
@@ -21,7 +21,7 @@
 	\end{figure}
 	Az AFM felhasználása kontakt illetve kopogtató üzemmódú lehet. A kontakt mód során a
 	felületen végighúzzuk a tűt és mérjük a $z$ irányű elmozdulását. Így képesek vagyunk a minta
-	felületén lévő atomok elrendezéséről magasságtérkép adni.
+	felületén lévő atomok elrendezéséről magasságtérképet adni.
 	Kopogtató mód \cite{Martin1987} során a tűt elemeljük a mintától és $f$ frekvenciával rezegtetjük.
 	A letapogatás során az  átlagos minta-tű távolságot a kontakt módú magasságtérkép felhasználásával
 	konstans értéken tartjuk.
@@ -33,13 +33,13 @@
 	\end{enumerate}
 	A cikkben a felületi töltéssűrűség mérését tekintjük célnak.
 	A \cite{Butt1991Dec, Butt20051} szerint az erő a) komponensét a minta és a tű közötti
-	kapacitásból a (\ref{eq:cap_force}) szerint származtathatjuk.
+	kapacitásból az (\ref{eq:cap_force}) szerint származtathatjuk.
 	\begin{equation}
 	\label{eq:cap_force}
 	F_{s} = -\frac{\ud E}{\ud D} = -\frac{\ud (CV^2 /2)}{\ud D} = -\frac12 \frac{\ud C}{\ud D} V^2
 	\end{equation}
 	Ha a minta pásztázása során ezen a) erőkomponens konstansnak mondható, tehát a felületi
-	érdesség kicsi, akkor a töltéssűrűg mérésében állandó hibát okozva eliminálható.
+	érdesség kicsi, akkor a töltéssűrűg mérésében állandó hibát okoz. ami eliminálható.
 	Az (\ref{eq:cap_force}) számításában a kritikus elem a kapacitás értéke, amit numerikus számítás
 	mellőzése esetén a \cite{Hudlet1998} szerinti analitikus eredményt használhatjuk fel.
 	A tű formályát a (\ref{fig:tip-sample} ábra) szerintinek veszi és a mintát sík felületünek
@@ -52,30 +52,30 @@
 	csak multiprocesszoros környezetben lehetséges elfogadható idő alatt.
 	
 \section{A feladat} \label{sec:feladat}
-	A minta egy fémezett felület, aminek magasságtérképét mérések eredményeként ismerjük
-	adott pontossággal.
-	A mérések egy négyzetes háló felett történtek, amelynek a háló mindkét irányban
-	$\delta_x = \delta_y \simeq 180 nm$ azonos felbontása, illetve a magasság $\delta_z \simeq 20nm$
+	A minta egy fémezett felület, aminek magasságtérképét mérések eredményeként 
+	adott pontossággal ismerjük.
+	A mérések egy négyzetes háló felett történtek, amelynek a háló mindkét vízszintes irányában
+	$\delta_x = \delta_y \simeq 180 nm$ azonos felbontása, illetve a függőleges $\delta_z \simeq 20nm$
 	felbontása volt.
 	A töltéssűrűség méréséhez szükséges második pásztázás során a tűt felemeljük és a mintához képest
-	$V_{tu}$ potenciálra kapcsoljuk. Ezután a fémezett felülettől mindig azonos távolságra tartjuk és ezen 
-	hosszú hegyes tűre ható erőt mérjük.
+	$V_{tu}$ potenciálra kapcsoljuk. Ezután a fémezett felülettől mindig azonos távolságra rezegtetjük
+	és ezen hosszú hegyes tűre ható erőt mérjük.
 	\noindent
 	\begin{center}
 	Végső cél olyan szimulátor építése, amelynek segítségével közel valós időben 
-	lehetséges felületmérés alapján a felületi töltéseloszlásról korrigált/pontosabb információt
+	lehetséges a mérés alapján a felületi töltéseloszlásról korrigált/pontosabb információt
 	kapni.
 	\end{center}
 	
-	A cikkben felhasznált mérési eredmény (\ref{fig:felulet}. ábra) egy
+	A cikkben felhasznált magasságtérkép-mérési eredmény (\ref{fig:felulet}. ábra) egy
 	$512\times512$ méretű szürkeárnyalatos *.tiff állomány, amely értéke $0-255$-ig terjed.
 	
 	\begin{figure}[!t]
 		\centering
-		\subfloat[Mérési eredmény]{\includegraphics[width=0.5\columnwidth]{kepek/eps/newafm_total.eps}%
+		\subfloat[Mérési eredmény]{\includegraphics[width=0.4\columnwidth]{kepek/eps/newafm_total.eps}%
 		\label{fig:afm_total}}
 		\hfil
-		\subfloat[Mérés részlete]{\includegraphics[width=0.5\columnwidth]{kepek/eps/newafm200.eps}%
+		\subfloat[Mérés részlete]{\includegraphics[width=0.4\columnwidth]{kepek/eps/newafm200.eps}%
 		\label{fig:afm200}}
 		\caption{\scriptsize Méréssel kapott magasságtérkép. Felbontás $d_x=d_y=120nm \ d_z=18.03nm$}
 		\label{fig:felulet}
@@ -118,13 +118,13 @@
 	
 	Az iteratív megoldás során a megoldás aktuális értékének kiszámításához az előző megoldásból indulunk ki.
 	A \eqref{eq:laplace} egyenletben szereplő deriválást az elsőrendű Taylor közelítés alkalmazásával a
-	\eqref{eq:it} 6-pontos sémát kapjuk.
+	\eqref{eq:it} szerinti 6-pontos sémát kapjuk.
 	\begin{multline} \label{eq:it} 
 		V_{ijk}^{n+1} = \\ \Delta_1 \cdot \left(V_{i-1,j,k}^n+V_{i+1,j,k}^n
 		+V_{i,j-1,k}^n+V_{i,j+1,k}^n\right)+ \\
 						\Delta_2 \cdot \left(V_{i,j,k-1}^n+V_{i,j,k+1}^n\right)
 	\end{multline}
-	ahol $V_{i,j,k}^n$ az az $n$-dik iterációs lépésben az $i,j,k$ indexü
+	ahol $V_{i,j,k}^n$ az az $n$-dik iterációs lépésben az $i,j,k$ indexű
 	pontban mérhető potenciált jelöli, $\Delta_1$ a vízszintes felbontásból,
 	$\Delta_2$ a függőleges felbontásból adódó állandó.
 	%Az iterációs eljárás előnye, hogy implementációja egyszerűbb és a
@@ -156,7 +156,8 @@
 \subsection{Szimuláció felépítése} \label{sec:felepites}
 	
 	A felületmérés során a vízszintes felbontás jóval kissebb, mint a függőleges felbontás, azaz a
-	pontok vízszintes távolsága sokkal nagyobb a függőlegesnél $d_x=d_y \gg d_z$ (lásd \ref{sec:feladat}. rész).
+	pontok vízszintes távolsága sokkal nagyobb a függőlegesnél $d_x=d_y=120nm \gg d_z=10nm$ (lásd
+	\ref{sec:feladat}. rész).
 	A Coulomb-kölcsönhatás a távolság négyzetével fordítottan arányos, így az előbb említettek értelmében egy mérési pont szomszédjait, pontosabban egy redukált
 	környezetét szükséges csupán szimulálni (Másképpen megfogalmazva a vízszintes mérési pontok
 	távolsága jóval nagyobb mint a Coulomb-kölcsönhatás effektív távolsága). Ezzel az elhanyagolással

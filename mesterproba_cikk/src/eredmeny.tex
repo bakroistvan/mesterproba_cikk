@@ -6,18 +6,18 @@
 	
 	A kód minimális változtatásával elérhető a párhuzamos végrehajtás. Ezt a
 	\texttt{for} ciklusok Parallel Toolbox beli \texttt{parfor} utasítására
-	cserélve érhetjük el. 4 processzormaggal rendelkező PC esetén ilyenkor
-	legjobb esetben a negyedére csökkenhet a futási idő. Valójában ez sose történik meg.
+	cserélve érhetjük el. 4 processzormaggal rendelkező PC-n  legjobb esetben a negyedére csökkenhet a
+	futási idő. Valójában ez sose történik meg.
 	A MATLAB Parallel Toolbox-a az egyes szimulácókat adott processzormagra osztja el.
-	Korábban láttuk, hogy ezen szimulációk lépésigénye nagyban eltérnek egymástól, így előáll az a
-	sajnálatos eset, hogy 3 mag tétlenül a negyedikre vár, ami miatt ez nem takinthető járható útnak. 
+	Korábban láttuk, hogy ezen szimulációk lépésigénye nagyban eltér egymástól, így előáll az a
+	sajnálatos eset, hogy 3 mag tétlenül a negyedikre vár, ami miatt ez nem tekinthető járható útnak. 
 	
 	\subsection{OpenCL implementációk}
 	OpenCL keretrendszer segítségével írt programot a GPU-n futtatva a
 	\ref{table:openresult}. táblázatban látható eredményeket kapjuk.
 	Csupán a globális memóriát használva a referenciához képest romlik a
 	teljesítmény. Ezt a videókártya prediktív cache nélküli kialakításának és a
-	globális memórájának a kiéheztetésnek tudhatjuk be.
+	globális memórájának a kiéheztetésének tudhatjuk be.
 	A lokális memória használata a futási időt drasztikusan le tudja
 	csökkenteni, ami a korábban ismertetett memória szervezési megfontolások
 	helyességét igazolja.

@@ -61,7 +61,7 @@
 	felcserélve iterálunk tovább.
 	
 	\subsubsection{Adatok mentése}
-	Tesztelhetőségi megfontolások végett a nem csak a tűre ható erőt (villamos
+	Tesztelhetőségi megfontolások végett nem csak a tűre ható erőt (villamos
 	térerősséget) exportáljuk, hanem a konvergencia szintjének változását és az
 	interpolált felületet is. Az exportálandó menyiségek ``kis''
 	mérete miatt egyszerű *.csv fájlként kerülnek mentésre. Ezen fájlok további
@@ -102,7 +102,7 @@
 		\label{fig:device} 
 	\end{figure}
 	
-	A ``compute unit''-ok kiéheztetésének elkerülés végett (több ezer)
+	A ``compute unit''-ok kiéheztetésének elkerülése végett több ezer
 	``work-item'' virtuális osztozik rajta.
 	Továbbá ezen ``work-item''-ek ``work-group''-okba vannak rendezve (később
 	részletezett megfontolások végett).
@@ -114,7 +114,7 @@
 	
 	Az OpenCL négy memória szintet különböztet meg, ami az
 	\ref{table:mem} táblázatban és az \ref{fig:device}. ábrán látható.
-	Ahhoz, hogy a rendszerben rejlő teljesítményt kiaknázzuk három fontos kérdést
+	Ahhoz, hogy a rendszerben rejlő teljesítményt kiaknázzuk, három fontos kérdést
 	kell a szimulátor magjának implementálásakor megválaszolnunk:
 	\begin{itemize}
 		\item \textbf{Mennyit?}: Tisztában kell lennünk az aktuális
@@ -150,7 +150,7 @@
 	
 	OpenCL keretrendszerben történő programozás során két programot kell írnunk.
 	Az egyik a ``host''-on fut, ami elvégzi a probléma összeállítását, memória
-	allokálását, argumentumok beállítását és a másik program a kernel meghívását a
+	allokálását, argumentumok beállítását és a kernel (másik program) meghívását a
 	``device''-on.
 	A kernel futása végeztével a ``host'' program kiolvassa a ``device''-ból
 	a kívánt eredményt.
@@ -184,12 +184,12 @@
 	
 	
 	
-	Ha a tér ahol a laplace egyenletet meg kell oldanunk nagyon nagy, akkor
+	Ha a tér, ahol a laplace egyenletet meg kell oldanunk nagyon nagy, akkor
 	érdemes szétbontani kissebb alterekre és azokhoz rendelni egy-egy
-	``work-item''-eket. Mivel a diszkrét Laplace egyenlet egy pontja a szomszédos
+	``work-item''-et. Mivel a diszkrét Laplace egyenlet egy pontja a szomszédos
 	pontokkal szoros kapcsolatban van, így az összefüggő ``work-item"-eket egy
 	``work-group''-ba érdemes szervezni, mivel így az átlapolódó pontok értékét a
-	szomszédos ``work-item'' is tudják írni és olvasni. Az ilyen típusú
+	szomszédos ``work-item''-ek is tudják írni és olvasni. Az ilyen típusú
 	problémának méretét a MAX\_WORK\_GROUP\_SIZES tulajdonság korlátozza.
 	
 	Jelen esetben a mérési eredmény egy pontjához tartozó tér átlagosan
@@ -220,12 +220,12 @@
 	\subsubsection{Globális memória és adott esetben lokális memória használata}
 	Kis erőfeszítéssel nagy javulást lehet elérni, ha a mérési ponthoz tartozó
 	szimulációs tér éppen belefér a lokális memóriába.
-	Tehát, mielőtt az \eqref{eq:it} szerinti iteratív megoldót futtatnánk elöször a
+	Tehát, mielőtt az \eqref{eq:it} szerinti iteratív megoldót futtatnánk először a
 	globális memóriából a lokális memóriába töltjük át a kérdéses pontokat, majd
 	számolunk rajta és a végén visszatöltjük a globális memóriába.
 	E javítással a referenciával azonos sebességet tudunk elérni.
 	\subsubsection{Globális memória és minden adódó alkalomkor a lokális memória használata}
-	Nagyobb erőfeszítést igényel, hogy minden alkalammal a globális memóriával való kommunikációt a
+	Nagyobb erőfeszítést igényel, hogy minden alkalommal a globális memóriával való kommunikációt a
 	lokális memória közbeékelésével tegyük.
 	Ezt úgy lehet felfogni, mintha a globális memóriát lokális memória méretű
 	kvantumokban tudnám csak elérni.
